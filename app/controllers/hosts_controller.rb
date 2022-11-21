@@ -19,4 +19,11 @@ class HostsController < ApplicationController
 
   def destroy
   end
+
+  # ホストデータのストロングパラメータ
+  private
+
+  def gests
+    params.require(:hosts).permit(:email, :encrypted_password)
+  end
 end

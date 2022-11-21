@@ -22,4 +22,11 @@ class GestsController < ApplicationController
 
   def destroy
   end
+
+  # ゲストデータのストロングパラメータ
+  private
+
+  def gests
+    params.require(:gests).permit(:firstname, :lastname, :kana_firstname, :kana_lastname, :allergy, :message, :is_deleted)
+  end
 end
