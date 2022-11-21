@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :hosts
+  devise_for :gests
  root to: 'gests#top'
  get '/gests/top' => 'gests#top', as: :wedding
 
