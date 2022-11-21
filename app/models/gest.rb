@@ -1,0 +1,2 @@
+class Gest < ApplicationRecord
+end
