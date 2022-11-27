@@ -3,24 +3,61 @@ class GestsController < ApplicationController
   end
 
   def new
+    @gest = Gest.new
   end
 
   def create
+    @gest = Gest.new(gest_params)
+    @gest.user_id = current_user.id
+    if @book.save
+      redirect_to about_path
+      flash[:notice] = "RSVP was successfully created."
+      redirect_to gest_path(@gest.id)
+      flash[:notice] = "You have created RSVP successfully."
+    else
+      @hosts = current_user
+      @gests = Gest.all
+      render :index
+    end
   end
 
   def index
+    @gests = Gest.all
+    @gest = Gest.new
+    @host = current_user
   end
 
   def show
+    @gest = Gest.find(params[:id])
+    @gestnew = Gest.new
+    @gests = Gest.all
   end
 
   def edit
+    @gest = Gest.find(params[:id])
+    if @gest.user == current_user
+      render "edit"
+    else
+      redirect_to about_path
+    end
   end
 
   def update
+    @gest = Gest.find(params[:id])
+    if @gest.update(gest_params)
+      flash[:notice] = "You have update RSVP successfully."
+       redirect_to about_path(@gest.id)
+    else
+      @gests = Gest.all
+      render :edit
+    end
   end
 
   def destroy
+    @gest= Gest.find(params[:id])
+    @gest.destroy
+    flash[:notice]= "RSVP was successfully Destroyd"
+    redirect_to about_path
   end
 
   # ゲストデータのストロングパラメータ

@@ -1,0 +1,71 @@
+<div class="container">
+<!-- フラッシュメッセージ -->
+ <p><% if flash[:notice] %>
+   <div class="flash">
+     <%= flash[:notice] %>
+   </div>
+ <% end %></p>
+
+<!-- 全体の左側 -->
+  <div class="row">
+   <div class="col-md-3">
+     <h2>Information</h2>
+
+     <table class="table">
+      <tbody><tr></tr>
+       <tr>
+  	     <th>date</th>
+  	      <th>3022.5.31 Thu</th>
+       </tr>
+       <tr>
+  	     <th>Time</th>
+  	      <th>Start 10:30~</th>
+       </tr>
+       <tr>
+  	     <th>Access</th>
+  	     <th>〒650-0003 兵庫県神戸市中央区山本通３丁目３−3番20号
+  	      <P>神戸北野ホテルにて</P>
+  	      <P>Tel 078-271-3711</P>
+  	     </th>
+       </tr>
+      </tbody>
+     </table>
+   </div>
+
+    <h2 class="mt-3">RSVP</h2>
+     <div class="rsvp">
+      <h3>お手数ではございますが
+        <P>ご出欠のお返事を4月15日迄に </P>
+        <P>賜りますようお願い申し上げます</P>
+       </h3>
+     </div>
+
+<!-- 紹介状送信ページへのボタン -->
+     <div class="row">
+       <%= link_to edit_gest_path(user.id), class: :'btn btn-outline-secondary btn-block' do %>
+        RSVP
+       <% end %>
+     </div>
+
+<!-- 全体の右側 -->
+   <div class="col-md-4 offset-md-1">
+    <h2>Hosts</h2>
+    <div class="hosts">
+      <p>Groom  山田　太郎</p>
+      <p>Brige  田中　花子</p>
+    </div>
+   </div>
+
+   <div class="col-md-4 offset-md-1">
+    <h2>Message</h2>
+     <p>謹啓 </p>
+     <p>初冬の候　皆様にはますますご清祥のことと お慶び申し上げます </p>
+     <p>このたび　私たちは結婚式を挙げることになりました </p>
+     <p>つきましては　日ごろお世話になっている皆様に お集まりいただき　ささやかな披露宴を催したいと存じます </p>
+     <P>ご多用中　誠に恐縮ではございますが ご来臨の栄を賜りたく　謹んでご案内申し上げます </p>
+     <P>敬白</P>
+     <p></p>
+   </div>
+
+ </div>
+</div>
