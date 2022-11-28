@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col-1">
     </div>
-     <h6 class="d-flex justify-content-left mb-5 bg-secondary p-2 text-black">新規ログイン</h6>
-     <h6 class="d-flex justify-content-left mb-5 bg-secondary p-2 text-red">
+     <h6 class="d-flex justify-content-left mb-5  p-2 text-black" style="border: 4px solid #BBFFFF;">新規ログイン</h6>
+     <h6 class="d-flex justify-content-left mb-5 p-2" style="border: 4px solid #BBFFFF; color:red">
        こちらは新郎新婦様のみログイン、閲覧が可能となっております。<br>
        招待者様はログイン、閲覧を控えていただくようにお願い申し上げます
      </h6>
@@ -26,10 +26,10 @@
           <%= f.label :（メイ）,class: "col-1" %>
           <%= f.text_field :kana_firstname,placeholder: "ミチコ",autofocus: true, class: "col-3"%>
         </div>
-        <div class="field">
-     　　　　　　<%= f.label :email %><br />
-      　　　　<%= f.email_field :email, autofocus: true, autocomplete: "email" %>　
-      　　　　</div>
+        <div class="field row mb-2">
+          <%= f.label :メールアドレス ,class: "col-3" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-3" %>
+        </div>
         <div class="field row mb-2">
           <%= f.label :パスワード（６文字以上）,class: "col-3"%>
           <%= f.password_field :password, autocomplete: "new-password", class: "col-3" %>
@@ -40,16 +40,14 @@
         </div>
         <div class="field row mb-4">
            <div class="col-3"></div>
-          <%= f.submit "新規登録" ,class: "col-2 btn btn-sm btn-success" %>
+           <%= f.submit "新規登録" ,class: "col-2 btn btn-sm btn-success" %>
         </div>
-        <% end %>
 
         <div class="row">
-          <div class="col-2">
-          <h6 class="d-flex justify-content-left mb-4 bg-secondary p-2 text-black bg-opacity-10">既に登録済みの方</h6>
-          </div>
+         <div class="col-3"></div>
+           <%= f.submit "既に登録済みの方" ,class: "col-2 btn btn-sm btn-success" %>
+           <%= link_to "こちら",new_gest_session_path, class: "link-primary"%>からログインしてください
+         </div>
         </div>
-        <div class="col-5">
-         <p><%= link_to "こちら",new_gest_session_path, class: "link-primary"%>からログインしてください。</P>
-        </div>
+        <% end %>
 </div>
