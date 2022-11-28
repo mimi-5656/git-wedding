@@ -6,8 +6,8 @@ class CreateGests < ActiveRecord::Migration[6.1]
       t.string :lastname, null: false
       t.string :kana_firstname, null: false
       t.string :kana_lastname, null: false
-      t.string :allergy, null: false
-      t.text :message, null: false
+      t.string :allergy
+      t.text :message
       t.boolean :is_deleted, null: false, default: true
 
       # ホストがゲスト一覧を見る際にパスワード

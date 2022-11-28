@@ -4,7 +4,7 @@
     </div>
      <h6 class="d-flex justify-content-left mb-5 bg-secondary p-2 text-black">新規ログイン</h6>
      <h6 class="d-flex justify-content-left mb-5 bg-secondary p-2 text-red">
-       こちらは新郎新婦様のみ閲覧可能となっております。<br>
+       こちらは新郎新婦様のみログイン、閲覧が可能となっております。<br>
        招待者様はログイン、閲覧を控えていただくようにお願い申し上げます
      </h6>
   </div>
@@ -22,10 +22,14 @@
         <div class="field row mb-2">
           <%= f.label :フリガナ,class: "col-2"%>
           <%= f.label :（セイ）,class: "col-1" %>
-          <%= f.text_field :kana_last_name,placeholder: "レイワ", autofocus: true, class: "col-3"%>
+          <%= f.text_field :kana_lastname,placeholder: "レイワ", autofocus: true, class: "col-3"%>
           <%= f.label :（メイ）,class: "col-1" %>
-          <%= f.text_field :kana_first_name,placeholder: "ミチコ",autofocus: true, class: "col-3"%>
+          <%= f.text_field :kana_firstname,placeholder: "ミチコ",autofocus: true, class: "col-3"%>
         </div>
+        <div class="field">
+     　　　　　　<%= f.label :email %><br />
+      　　　　<%= f.email_field :email, autofocus: true, autocomplete: "email" %>　
+      　　　　</div>
         <div class="field row mb-2">
           <%= f.label :パスワード（６文字以上）,class: "col-3"%>
           <%= f.password_field :password, autocomplete: "new-password", class: "col-3" %>

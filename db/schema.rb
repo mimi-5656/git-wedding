@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_21_144443) do
+ActiveRecord::Schema.define(version: 2022_11_21_111526) do
 
   create_table "gests", force: :cascade do |t|
     t.string "firstname", null: false
     t.string "lastname", null: false
     t.string "kana_firstname", null: false
     t.string "kana_lastname", null: false
-    t.string "allergy", null: false
-    t.text "message", null: false
+    t.string "allergy"
+    t.text "message"
     t.boolean "is_deleted", default: true, null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -27,9 +27,6 @@ ActiveRecord::Schema.define(version: 2022_11_21_144443) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "name"
-    t.index ["email"], name: "index_gests_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_gests_on_reset_password_token", unique: true
   end
 
   create_table "hosts", force: :cascade do |t|
@@ -40,9 +37,6 @@ ActiveRecord::Schema.define(version: 2022_11_21_144443) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "name"
-    t.index ["email"], name: "index_hosts_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_hosts_on_reset_password_token", unique: true
   end
 
 end

@@ -2,8 +2,9 @@
   <div class="row">
     <div class="col-1">
     </div>
-       <h6 class="d-flex justify-content-left mb-5 bg-secondary p-2 text-black bg-opacity-10"><%= @gest.lastname%><%= @gest.firstname%>さんの返信内容</h6>
-  </div>
+       <h6 class="d-flex justify-content-left mb-5  p-2 text-black bg-opacity-10" style="border: 4px solid #BBFFFF;">
+       <%= @gest.lastname%><%= @gest.firstname%>さんの返信内容</h6>
+    </div>
 
        <%= form_with model: @gest do |f| %>
 
@@ -37,29 +38,29 @@
         </div>
         <div class="field row mb-2">
           <%= f.label :メッセージ,class: "col-2"%>
-          <%= f.text_field :message, placeholder: "小学生以下のお連れ様がいらっしゃれば、氏名・アレルギーの記載をお願いいたします", class: "col-3" %>
+          <%= f.text_field :message, placeholder: "小学生以下のお連れ様がいらっしゃれば、氏名・アレルギーの記載をお願いいたします", class: "col-8" %>
         </div>
         <div class="field row mb-2">
           <%= f.label :出欠,class: "col-2"%>
-          <%= f.radio_button :status, false , checked: true, class: "col-3"  %>
+          <%= f.radio_button :status, false , checked: true, class: "col-1"  %>
           <%= f.label :ご出席 %>
 
-          <%= f.radio_button :status, true , class: "col-3" %>
+          <%= f.radio_button :status, true , class: "col-1" %>
           <%= f.label :ご欠席 %>
         </div>
-        <div class="field row mb-4">
-          <div class="col-2"></div>
-          <%= f.submit "内容を返信" ,class: "col-2 btn btn-sm btn-success" %>
-        </div>
-       <% end %>
+
 
        <div class="field row mb-4">
           <div class="col-2"></div>
-           <%= link_to "返信内容を変更する", edit_gest_path(@gest), class: "col-2 btn btn-default" %>
-          </div>
-        <div class="field row mb-4">
+           <%= f.submit "返信内容を変更する", edit_gest_path(current_gest), class: "col-2 btn btn-default" %>
+       </div>
+       <div class="field row mb-4">
           <div class="col-2"></div>
-           <%= link_to "戻る", about_path(@gest), class: "col-2 btn btn-default" %>
-        </div>
+           <%= f.submit "戻る", about_path(@gest), class: "col-2 btn btn-default" %>
+       </div>
+       <% end %>
+
 
   </div>
+ </div>
+</div>

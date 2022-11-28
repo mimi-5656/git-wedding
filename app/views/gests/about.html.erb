@@ -1,0 +1,76 @@
+<div class="container">
+<!-- フラッシュメッセージ -->
+ <p><% if flash[:notice] %>
+   <div class="flash">
+     <%= flash[:notice] %>
+   </div>
+ <% end %></p>
+
+<!-- 全体の左側 -->
+  <div class="row">
+   <div class="col-md-3">
+     <h2>Information</h2>
+
+     <table class="table">
+      <tbody><tr></tr>
+       <tr>
+  	     <th>date</th>
+  	      <th>3022.5.31 Thu</th>
+       </tr>
+       <tr>
+  	     <th>Time</th>
+  	      <th>Start 10:30~</th>
+       </tr>
+       <tr>
+  	     <th>Access</th>
+  	     <th>〒650-0003<br>
+  	         兵庫県神戸市中央区山本通３丁目３−3番20号<br>
+  	         神戸北野ホテルにて<br>
+  	         Tel 078-271-3711
+  	     </th>
+       </tr>
+      </tbody>
+     </table>
+
+     <h2 class="mt-4">RSVP</h2>
+      <h6>お手数ではございますが
+        <P>ご出欠のお返事を4月15日迄に<br>
+        賜りますようお願い申し上げます</P>
+        <br>
+        <P>4月15日迄はお返事の内容を編集していただけます</P>
+        <P>以降はお返事の内容の編集は控えていただくようにお願い申し上げます</P>
+      </h6>
+
+      <div class="row"><!-- 紹介状送信ページへのボタン -->
+       <%= link_to new_gest_session_path(current_gest), class: :'btn btn-outline-secondary btn-block' do %>
+        RSVPの送信
+       <% end %>
+       <%= link_to gests_path(current_gest), class: :'btn btn-outline-secondary btn-block' do %>
+        こちらで送信内容確認できます
+       <% end %>
+      </div>
+     </div>
+
+    <div class="col-md-8">
+     <div class="col-md-4 offset-md-1">
+      <h2>Hosts</h2>
+       <div class="hosts">
+        <p>Groom  山田　太郎</p>
+        <p>Brige  田中　花子</p>
+      </div>
+     </div>
+
+     <div class="col-md-10 offset-md-1">
+      <h2>Message</h2>
+       <p>謹啓 </p>
+       <p>新緑の候　皆様にはますますご清祥のこととお慶び申し上げます</p>
+       <p>このたび　私たちは結婚式を挙げることになりました</p>
+       <p>つきましては　日ごろお世話になっている皆様にお集まりいただきささやかな披露宴を催したいと存じます</p>
+       <P>ご多用中誠に恐縮ではございますがご来臨の栄を賜りたく謹んでご案内申し上げます </p>
+       <P>敬白</P>
+       <p></p>
+     </div>
+
+
+ </div>
+</div>

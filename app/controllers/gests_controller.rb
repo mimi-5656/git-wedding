@@ -1,4 +1,6 @@
 class GestsController < ApplicationController
+  #before_action :authenticate_gest!,only: [:top, :about, :show, :edit]
+
   def top
   end
 
@@ -24,10 +26,11 @@ class GestsController < ApplicationController
 	def complete
 		Gest.create!(session[:gest])
 		session.delete(:gest)
+	end
 
   def create
     @gest = Gest.new(gest_params)
-    @gest.user_id = current_user.id
+    @gest.gest_id = current_gest.id
     if @book.save
       redirect_to about_path
       flash[:notice] = "RSVP was successfully created."
@@ -43,22 +46,20 @@ class GestsController < ApplicationController
   def index
     @gests = Gest.all
     @gest = Gest.new
-    @host = current_user
+    @host = current_gest
   end
 
   def show
     @gest = Gest.find(params[:id])
-    @gestnew = Gest.new
-    @gests = Gest.all
-  end
-
-  def edit
-    @gest = Gest.find(params[:id])
-    if @gest.user == current_user
+    if @gest == current_gest
       render "edit"
     else
       redirect_to about_path
     end
+  end
+
+  def edit
+    @gest = Gest.find(params[:id])
   end
 
   def update
