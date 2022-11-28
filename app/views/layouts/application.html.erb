@@ -2,29 +2,20 @@
 <html>
   <head>
     <title>Wedding</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body
-   <header>
-    <% if user_signed_in? %><!-- ログイン時表示 -->
-      <li>
-        <%= link_to "ログアウト", destroy_gest_session_path, method: :delete %>
-      </li>
-    <% else %><!-- ログアウト時表示 -->
-      <li>
-        <%= link_to "新規登録", new_gest_registration_path %>
-      </li>
-      <li>
-        <%= link_to "ログイン", new_gest_session_path %>
-      </li>
-    <% end %>
-   </header>
+  <body>
+
+    <%= render 'layouts/_header' %>
+
     <%= yield %>
+
+    <%= render 'layouts/_footer' %>
+
   </body>
 </html>

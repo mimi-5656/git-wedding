@@ -46,7 +46,10 @@
 <!-- 紹介状送信ページへのボタン -->
      <div class="row">
        <%= link_to edit_gest_path(user.id), class: :'btn btn-outline-secondary btn-block' do %>
-        RSVP送信・編集
+        RSVPの送信・送信内容の変更
+       <% end %>
+       <%= link_to gest_path(user.id), class: :'btn btn-outline-secondary btn-block' do %>
+        RSVPの送信内容を確認
        <% end %>
      </div>
 
@@ -62,7 +65,7 @@
    <div class="col-md-4 offset-md-1">
     <h2>Message</h2>
      <p>謹啓 </p>
-     <p>初冬の候　皆様にはますますご清祥のことと お慶び申し上げます </p>
+     <p>新緑の候　皆様にはますますご清祥のことと お慶び申し上げます </p>
      <p>このたび　私たちは結婚式を挙げることになりました </p>
      <p>つきましては　日ごろお世話になっている皆様に お集まりいただき　ささやかな披露宴を催したいと存じます </p>
      <P>ご多用中　誠に恐縮ではございますが ご来臨の栄を賜りたく　謹んでご案内申し上げます </p>

@@ -1,2 +1,37 @@
-<h1>Gests#index</h1>
-<p>Find me in app/views/gests/index.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-1">
+    </div>
+       <h6 class="d-flex justify-content-left mb-5 bg-secondary p-2 text-black bg-opacity-10">ゲスト様一覧</h6>
+  </div>
+
+      <table class='table'>
+        <thead　class='thead-light'>
+          <tr>
+            <th>氏名</th>
+            <th>氏名(カナ)</th>
+            <th>出欠</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @gests.each do |gest| %>
+          <tr>
+            <td>
+              <%=  link_to gest_path(gest.id),class: 'nav-link' do %>
+                <%= gest.lastname %><%= gest.firstname %>
+              <% end %>
+            </td>
+            <td><%= gest.kana_lastname %><%= gest.kana_firstname %></td>
+            <td>
+              <% if gest.is_deleted? %>
+                欠席
+              <% else %>
+                出席
+              <% end %>
+            </td>
+          </tr>
+          <% end %>
+          <%= paginate @gests %>
+        </tbody>
+      </table>
+</div>

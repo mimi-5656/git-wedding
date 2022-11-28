@@ -7,7 +7,7 @@
   </div>
 
       <%= form_with model: @gest do |f| %>
-      
+
         <% if @gest.errors.any? %>
           <div id="error_explanation">
            <h2><%= @gest.errors.count %> errors prohibited this book from being saved:</h2>
@@ -33,21 +33,12 @@
           <%= f.text_field :kana_first_name, class: "col-3"%>
         </div>
         <div class="field row mb-2">
-          <%= f.label :郵便番号,class: "col-2"%>
-          <%= f.text_field :postcode, class: "col-3" %>
-        </div>
-        <div class="field row mb-2">
-          <%= f.label :住所,class: "col-2"%>
-          <%= f.text_field :address, class: "col-7" %>
-        </div>
-
-        <div class="field row mb-2">
           <%= f.label :アレルギー,class: "col-2"%>
           <%= f.email_field :allergy, class: "col-3" %>
         </div>
         <div class="field row mb-2">
           <%= f.label :メッセージ,class: "col-2"%>
-          <%= f.text_field :message, class: "col-3" %>
+          <%= f.text_field :message,  placeholder: "小学生以下のお連れ様がいらっしゃれば、氏名・アレルギーの記載をお願いいたします",class: "col-3" %>
         </div>
         <div class="field row mb-2">
           <%= f.label :出欠,class: "col-2"%>

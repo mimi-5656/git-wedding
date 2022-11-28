@@ -1,0 +1,46 @@
+ <header>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+     <span>Happy Wedding</span>
+
+
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+      <% if gest_signed_in? %>
+       <%= link_to  about_path, class: 'nav-link text-light' do %>
+       </li><i class="fa-solid fa-rings-wedding">Information</i>
+       <% end %>
+
+       <%= link_to gest_path, class: 'nav-link text-light' do %>
+       <li><i class="fas fa-users"></i>RSVP check</li>
+       <% end %>
+
+       <%= link_to edit_gest_path, class: 'nav-link text-light' do %>
+       <li><i class="fas fa-book-open"></i>RSVP send</li>
+       <% end %>
+
+       <%= link_to destroy_gest_session_path, class: 'nav-link text-light', method: :delete do %>
+       <li><i class="fas fa-sign-out-alt"></i>Log out</li>
+       <% end %>
+      <% else %>
+        <%= link_to about_path, class: 'nav-link text-light' do %>
+        </li><i class="fa-solid fa-rings-wedding">Information</i>
+        <% end %>
+
+        <%= link_to gest_path, class: 'nav-link text-light' do %>
+        <li><i class="fas fa-users"></i>RSVP check</li>
+        <% end %>
+
+        <%= link_to edit_gest_path, class: 'nav-link text-light' do %>
+        <li><i class="fas fa-book-open"></i>RSVP send</li>
+        <% end %>
+
+        <%= link_to gest_session_path, class: 'nav-link text-light' do %>
+        <li><i class="fas fa-sign-in-alt"></i> Log in</li>
+        <% end %>
+        <% end %>
+        </ul>
+     </div>
+
+  </nav>
+</header>
