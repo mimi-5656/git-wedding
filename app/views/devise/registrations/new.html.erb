@@ -2,7 +2,11 @@
   <div class="row">
     <div class="col-1">
     </div>
-     <h6 class="d-flex justify-content-left mb-5 bg-secondary p-2 text-black">新規会員登録</h6>
+     <h6 class="d-flex justify-content-left mb-5 bg-secondary p-2 text-black">新規ログイン</h6>
+     <h6 class="d-flex justify-content-left mb-5 bg-secondary p-2 text-red">
+       こちらは新郎新婦様のみ閲覧可能となっております。<br>
+       招待者様はログイン、閲覧を控えていただくようにお願い申し上げます
+     </h6>
   </div>
 
       <%= form_with model: @gest, url: gest_registration_path, id: 'new_gest', class: 'new_gest', local: true do |f| %>
