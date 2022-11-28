@@ -45,11 +45,11 @@
 
 <!-- 紹介状送信ページへのボタン -->
      <div class="row">
-       <%= link_to edit_gest_path(user.id), class: :'btn btn-outline-secondary btn-block' do %>
+       <%= link_to new_gest_path(user.id), class: :'btn btn-outline-secondary btn-block' do %>
         RSVPの送信
        <% end %>
        <%= link_to gest_path(user.id), class: :'btn btn-outline-secondary btn-block' do %>
-        RSVPの送信内容を確認・送信内容の変更
+        RSVPを送信済みのゲスト様はこちら
        <% end %>
      </div>
 

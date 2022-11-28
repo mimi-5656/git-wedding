@@ -3,8 +3,27 @@ class GestsController < ApplicationController
   end
 
   def new
-    @gest = Gest.new
-  end
+		session.delete(:gest)
+		@gest = Gest.new
+	end
+
+	def back
+		@gest = Gest.new(session[:gest])
+		session.delete(:gest)
+		render :new
+	end
+
+	def confirm
+		@gest = Gest.new(gest_params)
+		session[:gest] = @gest
+		if @gest.invalid? #バリデーションエラーの場合にtrue、エラーがあった場合には入力画面に戻る
+			render :new
+		end
+	end
+
+	def complete
+		Gest.create!(session[:gest])
+		session.delete(:gest)
 
   def create
     @gest = Gest.new(gest_params)
@@ -51,13 +70,6 @@ class GestsController < ApplicationController
       @gests = Gest.all
       render :edit
     end
-  end
-
-  def destroy
-    @gest= Gest.find(params[:id])
-    @gest.destroy
-    flash[:notice]= "RSVP was successfully Destroyd"
-    redirect_to about_path
   end
 
   # ゲストデータのストロングパラメータ
