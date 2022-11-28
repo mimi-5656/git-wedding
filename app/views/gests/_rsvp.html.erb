@@ -1,12 +1,5 @@
-<!-- RSVP内容 -->
-<div class="container">
-  <div class="row">
-    <div class="col-1">
-    </div>
-    <h1>RSVP</h1>
-  </div>
 
-      <%= form_with model: @gest do |f| %>
+       <%= form_with model: @gest do |f| %>
 
         <% if @gest.errors.any? %>
           <div id="error_explanation">
@@ -38,7 +31,7 @@
         </div>
         <div class="field row mb-2">
           <%= f.label :メッセージ,class: "col-2"%>
-          <%= f.text_field :message,  placeholder: "小学生以下のお連れ様がいらっしゃれば、氏名・アレルギーの記載をお願いいたします",class: "col-3" %>
+          <%= f.text_field :message, placeholder: "小学生以下のお連れ様がいらっしゃれば、氏名・アレルギーの記載をお願いいたします", class: "col-3" %>
         </div>
         <div class="field row mb-2">
           <%= f.label :出欠,class: "col-2"%>
@@ -50,8 +43,6 @@
         </div>
         <div class="field row mb-4">
           <div class="col-2"></div>
-          <%= f.submit "変更した内容を返信" ,class: "col-2 btn btn-sm btn-success" %>
+          <%= f.submit "内容を返信" ,class: "col-2 btn btn-sm btn-success" %>
         </div>
        <% end %>
-
-  </div>

@@ -24,6 +24,6 @@ class HostsController < ApplicationController
   private
 
   def gests
-    params.require(:hosts).permit(:email, :encrypted_password)
+    params.require(:hosts).permit( :encrypted_password)
   end
 end

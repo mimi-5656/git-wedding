@@ -45,7 +45,7 @@ class GestsController < ApplicationController
   def update
     @gest = Gest.find(params[:id])
     if @gest.update(gest_params)
-      flash[:notice] = "You have update RSVP successfully."
+      flash[:notice] = "内容の変更に成功しました"
        redirect_to about_path(@gest.id)
     else
       @gests = Gest.all
